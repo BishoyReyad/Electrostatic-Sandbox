@@ -9,14 +9,14 @@ int main(void){
        if (write(STDOUT_FILENO, buf, BUFFERSIZE) != n)
        {
             err_sys("write error");
-       }
-       if (n<0)
+       } }
+       if (n < 0)
        {
         err_sys("read error");
        }
        exit(0);
        
        
-    }
+   
     
 }

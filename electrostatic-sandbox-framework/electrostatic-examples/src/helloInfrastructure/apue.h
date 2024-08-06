@@ -42,7 +42,7 @@ typedef	void	Sigfunc(int);	/* for signal handlers */
 
 #define	min(a,b)	((a) < (b) ? (a) : (b))
 #define	max(a,b)	((a) > (b) ? (a) : (b))
-
+#include "error.c"
 /*
  * Prototypes for our own functions.
  */
