@@ -31,7 +31,7 @@ jobs:
           run: chmod +rwx ./setup-environment/setup-sandbox.sh && ./setup-environment/setup-sandbox.sh
 
         - name: User's Permissions Granting
-          run: cd ./electrostatic-sandbox-framework && chmod +rwx ./helper-scripts/project-impl/*.sh
+          run: cd ./electrostatic-sandbox-framework && chmod +rwx ./helper-scripts/project-impl/*.sh && chmod +rwx ./helper-scripts/ci-cd/*.sh
         
         - name: Compiling electrostatic-core Native Binaries
           run: cd ./electrostatic-sandbox-framework && ./helper-scripts/ci-cd/compile-electrostatic.sh ""
@@ -44,6 +44,9 @@ jobs:
           
         - name: Testing electrostatic4j Java Binding API
           run: cd ./electrostatic-sandbox-framework && ./helper-scripts/ci-cd/test-e4j.sh
+
+        - name: Building electrostatic4j:serial4j
+          run: cd ./electrostatic-sandbox-framework && ./helper-scripts/ci-cd/compile-serial4j.sh
 
     build-electrostatic-primer:
       # runner images with architectures (variants)
